@@ -1,41 +1,140 @@
-# 카드리스트 만들기
+# 참고사항
 
-## 1. 주의 사항
+## 아이콘 폰트
+
+- https://fontawesome.com
+- https://xpressengine.github.io/XEIcon
+  :index.html <link> 태그 확인
+
+### 1.1. 본프로젝트 활용 아이콘 폰트
+
+- https://react-icons.github.io/react-icons
+
+## 2. css 초기화
+
+- reset.css - 간략한 정리
+  : https://meyerweb.com/eric/tools/css/reset/reset.css
+
+- normalize.css - 상세한 정리
+  : https://necolas.github.io/normalize.css/8.0.1/normalize.css
+
+- 우리가 만든 common.css 파일
+
+```css
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline-style: none; */
+}
+a {
+  color: #1e1e1e;
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+html {
+  font-size: 14px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", "Noto Sans KR", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  color: #1e1e1e;
+  font-size: 14px;
+}
+```
+
+-필수 주의 사항
+
+```
+반드시 reset 또는 normalize 를 먼저 배치하고
+본인의 css 를 배치해야한다. 그렇지 않으면
+우리 css 가 덮어써 져서 정상적 구성이 어렵다.
 
 ```
 
-a, span 태그는 너비와 높이를 줄 수 없다.
-이유는 초기값이 display: inline 이라서.
+```html
+<link
+  rel="stylesheet"
+  href="https://meyerweb.com/eric/tools/css/reset/reset.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+/>
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+/>
+<link rel="stylesheet" href="./css/common.css" />
+<link rel="stylesheet" href="./css/header.css" />
+<link rel="stylesheet" href="./css/main.css" />
+<link rel="stylesheet" href="./css/card-list.css" />
+<link rel="stylesheet" href="./css/footer.css" />
 ```
 
-```
-a, span 태그에 너비, 높이, 마진, 패딩을 주려면
-display: block 을 손으로 적어준다.
-팁! display: flex 를 준다.
-```
+## 3. inline, block, inline-block 정리
 
-## 2. 정말 중요한 내용
-
-### 2.1 position 을 필수로 이해를 해야 한다.
-
-#### 2.1.2. position:fixed
+### 3.1. display: inline
 
 ```
-웹 브라우저 기준으로 위치 고정
-스크롤, 화면이 넓거나, 좁거나, 짧아도 위치가 고정 된다.
+<span>, <b>, <strong>, <a>, <img>...
 ```
 
--주의사항
+- 가로로 배치된다
+- 너비, 높이 비활성이
+- 패딩, 마진 일부 미지원
+- 글자처럼 옆으로 계속 배치된다
+
+### 3.2. display: bolck
 
 ```
-position:fixed 하면 웹브라우저 기준으로 화면의 내용이
-레이아웃에서 높이가 반영이 안된다.
-position:fixed 하면 너비를 줘야 한다.
-배경색도 줘야 한다.
-웹브라우저 기준으로 left, top bottom, right 도 설정
+<div>, <header>, <main>, <footer>
+<ul>, <li>, <h1>, <h2> ...
 ```
 
+- 자동으로 너비가 100% 기본값
+- 너비, 높이, 마진, 패딩 등 모두 가능
+
+### 3.3. display:inline-block
+
+- 가로로너비, 높이 등을 셋팅, 즉 block 도 같이 부여
+- display: inline-block
+- 기본너비는 지정하지 않으면 내용물 만큼 소비.
+- 가로로 연속 배치가 가능하다.
+
+## 4. css 정리
+
+- VScode PostCSS Sorting 설치
+
 ```
-position:fiexd 하면 우선 전체 너비를 기준으로
-내용과 구분해서 div 구성을 추천한다.
+정렬 속성 셋팅
+설정 메뉴 > setting.json 검색 > 파란색 글자 setting.json 찾아서 클릭
+그냥 설정창 상단에 아이콘을 누르자.
+```
+
+-다음 항목을 추가한다. (쉼표를 꼭 넣자)
+
+```json
+"postcssSorting.config": {
+  "properties-order": ["display", "list-style", "position", "top", "right", "bottom", "left", "float", "clear", "width", "height", "padding", "margin", "border", "background", "color", "font", "font-weight", "font-size", "line-height", "font-family", "letter-spacing", "text-decoration", "text-align", "verticla-align", "white-space", "content", "animation"]
+}
+```
+
+- 키보드 단축기 셋팅하기
+
+```
+관리 도구 > 바로 가기 키  > 클릭 > post 검색 > 중복 안된키 조합
+ Ctrl + Alt + C 로 설정
 ```
