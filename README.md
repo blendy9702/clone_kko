@@ -138,3 +138,17 @@ body {
 관리 도구 > 바로 가기 키  > 클릭 > post 검색 > 중복 안된키 조합
  Ctrl + Alt + C 로 설정
 ```
+
+## 5. CSS 표준검사
+
+- https://jigsaw.w3.org/css-validator
+- https://caniuse.com
+
+## 6. html 표준검사
+
+- https://validator.w3.org
+- https://caniuse.com
+
+## 7. favicon
+
+- 예의, 신뢰도 향상
