@@ -12,6 +12,12 @@
       type="image/x-icon"
     />
     <title>카카오 브레인 블로그 클론 프로젝트</title>
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" /> -->
     <link rel="stylesheet" href="./css/common.css" />
@@ -25,9 +31,13 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
+
     <script src="./js/header.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/footer.js"></script>
+    <script src="./js/slide-logo.js"></script>
+    <script src="./js/slide-main.js"></script>
+    <script src="./js/slide-card.js"></script>
   </head>
 
   <body>
@@ -80,10 +90,29 @@
           <!-- 왼쪽 슬라이드 -->
           <div class="left">
             <!-- 교체 가능 -->
-            <div class="visual-slide">
-              <a href="#">
-                <img src="./images/b1.png" alt="배너이미지" />
-              </a>
+            <div class="Swiper visual-slide">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./images/b1.png" alt="배너이미지" />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./images/b1.png" alt="배너이미지" />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./images/b1.png" alt="배너이미지" />
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#">
+                    <img src="./images/b1.png" alt="배너이미지" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -331,46 +360,64 @@
       <!-- 카드 슬라이드 -->
       <div class="mb-card-slide">
         <h4 class="card-folder">폴더 📁</h4>
-        <div class="mb-card-slide-wrap">
-          <a href="#" class="card-wrap">
-            <div class="card-img">
-              <img src="./images/p1.png"/ alt="카드이미지">
+        <div class="swiper mb-card-slide-wrap">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="#" class="card-wrap">
+                <div class="card-img">
+                  <img src="./images/p1.png"/ alt="카드이미지">
+                </div>
+                <div class="card-info">
+                  <h5 class="card-cate">AI Healthcare</h5>
+                  <span class="card-count">10</span>
+                </div>
+              </a>
             </div>
-            <div class="card-info">
-              <h5 class="card-cate">AI Healthcare</h5>
-              <span class="card-count">10</span>
+            <div class="swiper-slide">
+              <a href="#" class="card-wrap">
+                <div class="card-img">
+                  <img src="./images/p2.png"/ alt="카드이미지">
+                </div>
+                <div class="card-info">
+                  <h5 class="card-cate">Brain Cloud</h5>
+                  <span class="card-count">4</span>
+                </div>
+              </a>
             </div>
-          </a>
-
-          <a href="#" class="card-wrap">
-            <div class="card-img">
-              <img src="./images/p2.png"/ alt="카드이미지">
+            <div class="swiper-slide">
+              <a href="#" class="card-wrap">
+                <div class="card-img">
+                  <img src="./images/p3.png"/ alt="카드이미지">
+                </div>
+                <div class="card-info">
+                  <h5 class="card-cate">Karlo</h5>
+                  <span class="card-count">24</span>
+                </div>
+              </a>
             </div>
-            <div class="card-info">
-              <h5 class="card-cate">Brain Cloud</h5>
-              <span class="card-count">4</span>
+            <div class="swiper-slide">
+              <a href="#" class="card-wrap">
+                <div class="card-img">
+                  <img src="./images/p4.png"/ alt="카드이미지">
+                </div>
+                <div class="card-info">
+                  <h5 class="card-cate">Krew</h5>
+                  <span class="card-count">25</span>
+                </div>
+              </a>
             </div>
-          </a>
-
-          <a href="#" class="card-wrap">
-            <div class="card-img">
-              <img src="./images/p3.png"/ alt="카드이미지">
+            <div class="swiper-slide">
+              <a href="#" class="card-wrap">
+                <div class="card-img">
+                  <img src="./images/p5.png"/ alt="카드이미지">
+                </div>
+                <div class="card-info">
+                  <h5 class="card-cate">LLMs</h5>
+                  <span class="card-count">3</span>
+                </div>
+              </a>
             </div>
-            <div class="card-info">
-              <h5 class="card-cate">Karlo</h5>
-              <span class="card-count">24</span>
-            </div>
-          </a>
-
-          <a href="#" class="card-wrap">
-            <div class="card-img">
-              <img src="./images/p4.png"/ alt="카드이미지">
-            </div>
-            <div class="card-info">
-              <h5 class="card-cate">Krew</h5>
-              <span class="card-count">25</span>
-            </div>
-          </a>
+          </div>
         </div>
         <div class="list-card-bt-wrap">
           <button id="bt-mb-more-card" class="bt">전체보기</button>

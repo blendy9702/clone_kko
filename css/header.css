@@ -114,7 +114,6 @@
 }
 
 .mb-menu-active {
-  /* transition-delay: 0s !important; */
   height: 150px !important;
   visibility: visible !important;
   display: block !important;
