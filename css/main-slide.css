@@ -1,0 +1,106 @@
+.main-slide {
+  display: flex;
+  /* 20 / 1180 *100 = 1.7 */
+  gap: 1.7vw;
+}
+
+.main-slide .left {
+  /* 770 / 1180 * 100 = 65.254 */
+  width: 65.254vw;
+  max-width: 770px;
+  height: 39.83vw;
+  max-height: 470px;
+}
+
+.visual-slide {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.visual-slide a {
+  width: 100%;
+  height: 100%;
+}
+.visual-slide a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-slide .swiper-pagination .swiper-pagination-bullet {
+  background-color: #636363;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+.visual-slide .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #fff;
+  width: 20px;
+}
+
+.main-slide .right {
+  max-width: 370px;
+  width: 31.35vw;
+  max-height: 470px;
+  width: 39.83vw;
+}
+.card-slide {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.card-slide a {
+  width: 100%;
+  height: 100%;
+}
+.card-slide a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.list-card-bt-wrap {
+  display: flex;
+  justify-content: center;
+}
+/* 모바일 하단 카드 슬라이드 */
+.mb-card-slide {
+  display: none;
+  margin-top: 60px;
+  overflow: hidden;
+}
+/* 가로 너비 대비 세로가 평상시에도 변함 */
+.mb-card-slide-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 1160px;
+}
+/* 가로 너비 대비 세로가 평상시에도 변한다. */
+@media screen and (max-width: 1024px) {
+  .main-slide {
+    display: block;
+    gap: 0;
+  }
+
+  .main-slide {
+    width: 100%;
+  }
+  .main-slide .left {
+    width: 100%;
+    max-width: 100%;
+    height: 980px;
+    max-height: 980px;
+  }
+
+  .main-slide .right {
+    display: none;
+  }
+
+  .mb-card-slide {
+    display: block;
+  }
+}
