@@ -1,4 +1,31 @@
 window.addEventListener("load", function () {
+  const MAIN_DATA_URL = "/apis/main.json";
+
+  fetch(MAIN_DATA_URL)
+    .then(function (response) {
+      const result = response.json();
+      return result;
+    })
+    .then(function (result) {
+      let htmlMainSlide = "";
+
+      for (let i = 0; i < 4; i++) {
+        const tag = `
+          <div class="swiper-slide">
+            <a href="${result[i].url}">
+              <img src="./images/${result[i].pic}" alt="${result[i].title}" />
+              <span class="swiper-main-txt">${result[i].title}</span>
+            </a>
+          </div>
+        `;
+        htmlMainSlide += tag;
+      }
+
+      const mainSlideTag = document.querySelector("#main-slide");
+      mainSlideTag.innerHTML = htmlMainSlide;
+    })
+    .catch(function () {});
+
   const visualSlideSW = new Swiper(".visual-slide", {
     loop: true,
     pagination: { el: ".visual-slide .swiper-pagination", clickable: true },
@@ -8,15 +35,12 @@ window.addEventListener("load", function () {
     },
     speed: 1000,
   });
-  // 개발자 추가 작업 : 마우스가 Enter 가 되면
+
   const visualSlide = document.querySelector(".visual-slide");
-  // console.log(visualSlide);
   visualSlide.addEventListener("mouseenter", function () {
-    // console.log("오버");
-    visualSlideSW.autoplay.stop;
+    visualSlideSW.autoplay.stop();
   });
   visualSlide.addEventListener("mouseleave", function () {
-    // console.log("out");
-    visualSlideSW.autoplay.start;
+    visualSlideSW.autoplay.start();
   });
 });

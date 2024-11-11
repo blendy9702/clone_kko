@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
     })
     .then(function (result) {
       // 1. json 뜯기
-      console.log(result);
+      // console.log(result);
       // 2. 반복해서 html 태그를 생성
       let logoHtml = "";
       for (let i = 0; i < 9; i++) {
@@ -21,14 +21,14 @@ window.addEventListener("load", function () {
         logoHtml += data;
       }
 
-      console.log(logoHtml);
+      // console.log(logoHtml);
 
       // 3. 생성된 html을 원하는 곳에 배치
       // 4. swiper 생성 및 실험
     })
     //   성공했을 때 할 행동
     .catch(function (error) {
-      console.log(result);
+      // console.log(result);
     });
 
   // const logoData;
@@ -36,12 +36,22 @@ window.addEventListener("load", function () {
   const headerLogo = new Swiper(".header-logo-motion", {
     loop: true,
     autoplay: {
-      delay: 1500,
+      delay: 500,
       disableOnInteraction: false,
     },
     effect: "fade",
     fadeEffect: {
       crossFade: true,
     },
+  });
+
+  const swiperContainer = document.querySelector(".swiper-wrapper");
+  swiperContainer.addEventListener("mouseenter", function () {
+    headerLogo.autoplay.start();
+  });
+
+  swiperContainer.addEventListener("mouseleave", function () {
+    headerLogo.autoplay.stop();
+    headerLogo.slideToLoop(0);
   });
 });

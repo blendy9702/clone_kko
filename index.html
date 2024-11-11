@@ -34,6 +34,9 @@
 
     <script src="./js/header.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/news.js"></script>
+    <script src="./js/crew.js"></script>
+    <script src="./js/card.js"></script>
     <script src="./js/footer.js"></script>
     <script src="./js/slide-logo.js"></script>
     <script src="./js/slide-main.js"></script>
@@ -58,31 +61,49 @@
           <div class="swiper header-logo-motion">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog01.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog01.png" alt="bloglogo" />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog02.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog02.png" alt="bloglogo" />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog03.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog03.png" alt="bloglogo" />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog04.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog04.png" alt="bloglogo" />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog05.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog05.png" alt="bloglogo" />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog06.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog06.png" alt="bloglogo" />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog07.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog07.png" alt="bloglogo" />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog08.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog08.png" alt="bloglogo" />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img src="./images/etc/logo-blog09.png" alt="" />
+                <a href="#">
+                  <img src="./images/etc/logo-blog09.png" alt="bloglogo" />
+                </a>
               </div>
             </div>
           </div>
@@ -119,10 +140,11 @@
           <div class="left">
             <!-- 교체 가능 -->
             <div class="swiper visual-slide">
-              <div class="swiper-wrapper">
+              <div class="swiper-wrapper" id="main-slide">
                 <div class="swiper-slide">
                   <a href="#">
                     <img src="./images/b1.png" alt="배너이미지" />
+                    <span class="swiper-main-txt">텍스트</span>
                   </a>
                 </div>
                 <div class="swiper-slide">
@@ -150,7 +172,8 @@
             <!-- 교체 가능 -->
             <div class="card-slide">
               <a href="#">
-                <img src="./images/c3.png" alt="배너이미지" />
+                <img src="./images/br.png" alt="배너이미지" />
+                <span class="right-card-slide">영입중</span>
               </a>
             </div>
           </div>
@@ -223,7 +246,7 @@
             <!-- 카테고리 목록 -->
             <div class="list-cate-wrap">
               <h4 class="list-title">Editor’s Pick 🏃🏻‍♀️🏃‍♂️🏃🏽</h4>
-              <div class="list-thum-wrap">
+              <div class="list-thum-wrap" id="crew-api">
                 <!--@Start 게시글 목록 -->
                 <div class="list">
                   <a href="#" class="thum">
@@ -328,7 +351,7 @@
             <!-- 카트 전체 목록 -->
             <div class="list-card">
               <!-- 카드 전체 목록 -->
-              <h4 class="card-folder">폴더 📁</h4>
+              <h4 class="card-folder" id="slide-card-api">폴더 📁</h4>
               <a href="#" class="card-wrap">
                 <div class="card-img">
                   <img src="./images/p1.png"/ alt="카드이미지">

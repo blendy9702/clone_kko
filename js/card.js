@@ -26,17 +26,9 @@ window.addEventListener("load", function () {
         htmlCards += tag;
       }
       //   console.log(htmlCards);
-      const slideCardsTag = document.querySelector("#slide-card-api");
-      // console.log(htmlCards);
-      slideCardsTag.innerHTML = Swiper(".mb-card-slide-wrap");
+      const cardsTag = document.querySelector("#cards-api");
+      // console.log(cardsTag);
+      cardsTag.innerHTML = htmlCards;
     })
     .catch(function () {});
-});
-
-window.addEventListener("load", function () {
-  const cardSlide = new Swiper(".mb-card-slide-wrap", {
-    slidesPerView: 4,
-    spaceBetween: 20,
-    loop: true,
-  });
 });
