@@ -46,6 +46,7 @@ window.addEventListener("load", function () {
   });
 
   const swiperContainer = document.querySelector(".swiper-wrapper");
+  headerLogo.autoplay.stop();
   swiperContainer.addEventListener("mouseenter", function () {
     headerLogo.autoplay.start();
   });
