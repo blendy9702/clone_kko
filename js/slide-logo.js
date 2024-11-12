@@ -36,7 +36,7 @@ window.addEventListener("load", function () {
   const headerLogo = new Swiper(".header-logo-motion", {
     loop: true,
     autoplay: {
-      delay: 500,
+      delay: 1000,
       disableOnInteraction: false,
     },
     effect: "fade",
